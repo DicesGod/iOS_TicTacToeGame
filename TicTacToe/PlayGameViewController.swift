@@ -214,7 +214,6 @@ class PlayGameViewController: UIViewController {
         {
             if (board[0] == 1 && board[1] == 1 && board[2] == 1){
                 self.createAlert(title: "End Game", message: "Player 2 win!")
-                
             }
         }
         
@@ -227,7 +226,7 @@ class PlayGameViewController: UIViewController {
             alert.dismiss(animated: true, completion: nil)
             self.reset()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ (action) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
         }))
         self.present(alert, animated: true,completion: nil)
