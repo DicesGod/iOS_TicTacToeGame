@@ -2,6 +2,8 @@ import UIKit
 
 class PlayGameViewController: UIViewController {
 
+    @IBOutlet weak var Section0: UIButton!
+    
     @IBOutlet weak var Section1: UIButton!
     
     @IBOutlet weak var Section2: UIButton!
@@ -16,15 +18,18 @@ class PlayGameViewController: UIViewController {
     
     @IBOutlet weak var Section7: UIButton!
     
-    @IBOutlet weak var Section8: UIButton!
+    @IBOutlet weak var Section8 : UIButton!
     
-    @IBOutlet weak var Section9: UIButton!
+//    enum state{
+//        case .empty
+//        case .player1
+//        case .player2
+//    }
    
     var player = 1
-    var winningConditions = [[1,2,3],[4,5,6],[6,7,8],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]]
-    var player1Moves = [[]]
-    var player2Moves = [[]]
-    var move = 0
+    var board = [0,0,0,
+                 0,0,0,
+                 0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,16 @@ class PlayGameViewController: UIViewController {
     }
     
     @IBAction func Reset(_ sender: UIButton) {
+        reset()
+    }
+    
+    func reset(){
+        board = [0,0,0,
+                 0,0,0,
+                 0,0,0]
+        Section0.setImage(UIImage(named: ""), for: UIControl.State.normal)
+        Section0.isEnabled = true
+        
         Section1.setImage(UIImage(named: ""), for: UIControl.State.normal)
         Section1.isEnabled = true
         
@@ -55,150 +70,168 @@ class PlayGameViewController: UIViewController {
         
         Section8.setImage(UIImage(named: ""), for: UIControl.State.normal)
         Section8.isEnabled = true
-        
-        Section9.setImage(UIImage(named: ""), for: UIControl.State.normal)
-        Section9.isEnabled = true
     }
     
+    @IBAction func Section0(_ sender: UIButton) {
+        if (player == 1){
+            Section0.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
+            board[0] = 1
+        }
+        else{
+            Section0.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
+            board[0] = 2
+        }
+        Section0.isEnabled = false
+        check(player: player)
+        changePlayer()
+    }
     
     @IBAction func Section1(_ sender: UIButton) {
         if (player == 1){
             Section1.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-//            move = 1
-//            for i in player1Moves{
-                player1Moves[0].append(1)
-          //  }
-            
-            changePlayer()
+           board[1] = 1
         }
         else{
             Section1.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            player2Moves.append([1,0, ])
-            changePlayer()
+            board[1] = 2
         }
-       
         Section1.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
     
     @IBAction func Section2(_ sender: UIButton) {
         if (player == 1){
             Section2.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-           player1Moves[0].append(2)
-           changePlayer()
+            board[2] = 1
         }
         else{
             Section2.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[2] = 2
         }
         Section2.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
     
-    @IBAction func Section3(_ sender: UIButton) {
+    
+    @IBAction func Section3(_ sender: Any) {
         if (player == 1){
             Section3.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            player1Moves[0].append(3)
-           changePlayer()
+            board[3] = 1
         }
         else{
             Section3.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-           changePlayer()
+            board[3] = 2
         }
         Section3.isEnabled = false
-        print(player1Moves)
-        print(player2Moves)
-        //check()
+        check(player: player)
+        changePlayer()
     }
     
     
     @IBAction func Section4(_ sender: Any) {
         if (player == 1){
             Section4.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[4] = 1
         }
         else{
             Section4.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-           changePlayer()
+            board[4] = 2
         }
         Section4.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
-    
     
     @IBAction func Section5(_ sender: Any) {
         if (player == 1){
             Section5.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[5] = 1
         }
         else{
             Section5.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[5] = 2
         }
         Section5.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
     
     @IBAction func Section6(_ sender: Any) {
         if (player == 1){
             Section6.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[6] = 1
         }
         else{
             Section6.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[6] = 2
         }
         Section6.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
     
     @IBAction func Section7(_ sender: Any) {
         if (player == 1){
             Section7.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[7] = 1
         }
         else{
             Section7.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[7] = 2
         }
         Section7.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
+    
     
     @IBAction func Section8(_ sender: Any) {
         if (player == 1){
             Section8.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[8] = 1
         }
         else{
             Section8.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
+            board[8] = 2
         }
         Section8.isEnabled = false
+        check(player: player)
+        changePlayer()
     }
     
-    
-    @IBAction func Section9(_ sender: Any) {
-        if (player == 1){
-            Section9.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
-            changePlayer()
-        }
-        else{
-            Section9.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
-            changePlayer()
-        }
-        Section9.isEnabled = false
-        
-    }
-    
-    func changePlayer(){
-        if (player == 1){
-            player = 2
-        } else{
-            player = 1
+        func changePlayer(){
+            if (player == 1){
+                player = 2
+            } else{
+                player = 1
+            }
         }
     
-    
-    func check(){
-      
+        func check(player: Int){
+        if (player == 1)
+        {
+            if (board[0] == 1 && board[1] == 1 && board[2] == 1){
+                self.createAlert(title: "End Game", message: "Player 2 win!")
+                
+            }
+        }
         
         }
+    
+    func createAlert(title: String, message: String){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            self.reset()
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler:{ (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true,completion: nil)
     }
-
     
     
 }

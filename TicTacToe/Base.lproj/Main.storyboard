@@ -32,21 +32,21 @@
                                                 </constraints>
                                                 <color key="tintColor" red="1" green="0.15747666358947754" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="Section1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="em5-K9-Hew"/>
+                                                    <action selector="Section0:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gql-Qh-7iJ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqG-pt-KQI">
                                                 <rect key="frame" x="128.5" y="0.0" width="125" height="124.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rg-qB-4WN"/>
+                                                    <action selector="Section1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ch-bP-C4C"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gvc-qg-jkh">
                                                 <rect key="frame" x="257.5" y="0.0" width="124.5" height="124.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TST-hQ-jBn"/>
+                                                    <action selector="Section2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V0w-DO-8Uv"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -58,21 +58,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="124.5" height="125"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IWg-2p-nWU"/>
+                                                    <action selector="Section3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ckH-NO-pl3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX5-Kg-n8j">
                                                 <rect key="frame" x="128.5" y="0.0" width="125" height="125"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xeV-nA-piw"/>
+                                                    <action selector="Section4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="px0-ud-5SE"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pK8-S6-Mq5">
                                                 <rect key="frame" x="257.5" y="0.0" width="124.5" height="125"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MKy-zQ-R5G"/>
+                                                    <action selector="Section5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wl5-wR-hh9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -84,21 +84,21 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="124.5" height="124.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w4g-QM-fht"/>
+                                                    <action selector="Section6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LKA-sj-XFo"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-VK-Tb2">
                                                 <rect key="frame" x="128.5" y="0.0" width="125" height="124.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PDI-Vv-I6Q"/>
+                                                    <action selector="Section7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1Vj-27-Acd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VuM-Bf-Ig1">
                                                 <rect key="frame" x="257.5" y="0.0" width="124.5" height="124.5"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                 <connections>
-                                                    <action selector="Section9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PRA-9Z-C2s"/>
+                                                    <action selector="Section8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lYY-EV-K2q"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -150,15 +150,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="Section1" destination="Oms-If-6CX" id="Av6-gq-nbm"/>
-                        <outlet property="Section2" destination="cqG-pt-KQI" id="Efe-Pq-axJ"/>
-                        <outlet property="Section3" destination="Gvc-qg-jkh" id="lvA-sx-1Pj"/>
-                        <outlet property="Section4" destination="X8T-Fi-xtk" id="BNi-kt-zx7"/>
-                        <outlet property="Section5" destination="MX5-Kg-n8j" id="eZo-xo-sd5"/>
-                        <outlet property="Section6" destination="pK8-S6-Mq5" id="8eF-sJ-Lan"/>
-                        <outlet property="Section7" destination="ijE-yX-dRC" id="rI8-y0-p2M"/>
-                        <outlet property="Section8" destination="Qro-VK-Tb2" id="hp7-vo-YWd"/>
-                        <outlet property="Section9" destination="VuM-Bf-Ig1" id="lsG-Y4-OiS"/>
+                        <outlet property="Section0" destination="Oms-If-6CX" id="X3B-Na-jlc"/>
+                        <outlet property="Section1" destination="cqG-pt-KQI" id="81L-us-lAM"/>
+                        <outlet property="Section2" destination="Gvc-qg-jkh" id="yXg-0J-khb"/>
+                        <outlet property="Section3" destination="X8T-Fi-xtk" id="gvj-oT-qxq"/>
+                        <outlet property="Section4" destination="MX5-Kg-n8j" id="rEg-ru-1xW"/>
+                        <outlet property="Section5" destination="pK8-S6-Mq5" id="bAV-HZ-sO8"/>
+                        <outlet property="Section6" destination="ijE-yX-dRC" id="WZI-6e-HY5"/>
+                        <outlet property="Section7" destination="Qro-VK-Tb2" id="d5r-BV-aCx"/>
+                        <outlet property="Section8" destination="VuM-Bf-Ig1" id="RmX-QP-6Fh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
