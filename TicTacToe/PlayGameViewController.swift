@@ -25,6 +25,10 @@ class PlayGameViewController: UIViewController {
     
     @IBAction func Reset(_ sender: UIButton) {
         reset()
+        player1winCount = 0
+        player2winCount = 0
+        self.player1win.text = "0"
+        self.player2win.text = "0"
     }
     
     func reset(){
@@ -38,6 +42,7 @@ class PlayGameViewController: UIViewController {
     }
     
     @IBAction func Section(_ sender: UIButton) {
+        sender.isEnabled = false
         if (player == 1){
             sender.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
             board[sender.tag] = 1
@@ -50,41 +55,37 @@ class PlayGameViewController: UIViewController {
             check(player: player)
             player = 1
         }
-        sender.isEnabled = false
+        
     }
     
-//    var board = [0,0,0,
-//                 0,0,0,
-//                 0,0,0]
-//    var winningcondition = [[0,1,2],[3,4,5],[6,7,8],
-//                            [0,3,6],[1,4,7],[2,5,8],
-//                            [0,4,8],[2,4,6]]
-//
         func check(player: Int){
-            if(player == 1){
+            if(player == 1 && board.contains(0) != false){
                 for winingline in winningcondition{
                    print(winingline[0])
                     if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
-                        self.createAlert(title: "End Game", message: "Player 1 win!")
+                        self.createAlert(title: "Result!", message: "iOS player win!")
                         player1winCount = player1winCount + 1
                         player1win.text = String(player1winCount)
                     }
                 }
             }
-                else
+                else if (player == 2 && board.contains(0) != false)
                 {
                     for winingline in winningcondition{
                         if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
-                            self.createAlert(title: "End Game", message: "Player 2 win!")
+                            self.createAlert(title: "Result!", message: "Android player win!")
                             player2winCount = player2winCount + 1
                             player2win.text = String(player2winCount)
                         }
                 }
             }
+            else{
+                self.createAlert(title: "Result!", message: "What a draw!")
+            }
+            
         }
     
     func createAlert(title: String, message: String){
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Play Again", style: .default, handler: { (action) in
             alert.dismiss(animated: true, completion: nil)
@@ -93,8 +94,10 @@ class PlayGameViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Reset", style: .default, handler:{ (action) in
             alert.dismiss(animated: true, completion: nil)
             self.reset()
-            self.player1win.text = ""
-            self.player2win.text = ""
+            self.player1winCount = 0
+            self.player2winCount = 0
+            self.player1win.text = "0"
+            self.player2win.text = "0"
         }))
         self.present(alert, animated: true,completion: nil)
     }
