@@ -59,7 +59,8 @@ class PlayGameViewController: UIViewController {
     }
     
         func check(player: Int){
-            if(player == 1 && board.contains(0) != false){
+            if (board.contains(0) == true){
+            if(player == 1){
                 for winingline in winningcondition{
                    print(winingline[0])
                     if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
@@ -69,7 +70,7 @@ class PlayGameViewController: UIViewController {
                     }
                 }
             }
-                else if (player == 2 && board.contains(0) != false)
+                else if (player == 2)
                 {
                     for winingline in winningcondition{
                         if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
@@ -79,10 +80,35 @@ class PlayGameViewController: UIViewController {
                         }
                 }
             }
-            else{
-                self.createAlert(title: "Result!", message: "What a draw!")
             }
-            
+            else{
+                if(player == 1){
+                    for winingline in winningcondition{
+                        print(winingline[0])
+                        if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
+                            self.createAlert(title: "Result!", message: "iOS player win!")
+                            player1winCount = player1winCount + 1
+                            player1win.text = String(player1winCount)
+                        }
+                        else{
+                            self.createAlert(title: "Result!", message: "What a draw!")
+                        }
+                    }
+                }
+                else if (player == 2 && board.contains(0) != false)
+                {
+                    for winingline in winningcondition{
+                        if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
+                            self.createAlert(title: "Result!", message: "Android player win!")
+                            player2winCount = player2winCount + 1
+                            player2win.text = String(player2winCount)
+                        }
+                        else{
+                            self.createAlert(title: "Result!", message: "What a draw!")
+                        }
+                    }
+                }
+            }
         }
     
     func createAlert(title: String, message: String){
