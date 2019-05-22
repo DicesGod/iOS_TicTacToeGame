@@ -17,6 +17,8 @@ class PlayGameViewController: UIViewController {
     
     var player1winCount = 0
     var player2winCount = 0
+    //Draw = 0 and Win = 1
+    var winOrdraw = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +34,7 @@ class PlayGameViewController: UIViewController {
     }
     
     func reset(){
+        winOrdraw = 1
         board = [0,0,0,
                  0,0,0,
                  0,0,0]
@@ -59,6 +62,8 @@ class PlayGameViewController: UIViewController {
     }
     
         func check(player: Int){
+            winOrdraw = 2
+            //check when board still have moves to play
             if (board.contains(0) == true){
             if(player == 1){
                 for winingline in winningcondition{
@@ -81,33 +86,39 @@ class PlayGameViewController: UIViewController {
                 }
             }
             }
+                //check when board has no move to play
             else{
                 if(player == 1){
                     for winingline in winningcondition{
                         print(winingline[0])
-                        if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
+                        myCondition: if (board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]){
                             self.createAlert(title: "Result!", message: "iOS player win!")
                             player1winCount = player1winCount + 1
                             player1win.text = String(player1winCount)
+                            winOrdraw = 1
+                            break myCondition
                         }
-                        else{
-                            self.createAlert(title: "Result!", message: "What a draw!")
-                        }
+                        
                     }
                 }
-                else if (player == 2 && board.contains(0) != false)
+                else if (player == 2)
                 {
                     for winingline in winningcondition{
-                        if board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]{
+                        myCondition: if (board[winingline[0]] != 0 && board[winingline[0]] == board[winingline[1]] && board[winingline[1]] == board[winingline[2]]){
                             self.createAlert(title: "Result!", message: "Android player win!")
                             player2winCount = player2winCount + 1
                             player2win.text = String(player2winCount)
+                            winOrdraw = 1
+                            break myCondition
                         }
-                        else{
-                            self.createAlert(title: "Result!", message: "What a draw!")
-                        }
+                     
                     }
                 }
+                if (winOrdraw == 2)
+                {
+                    self.createAlert(title: "Result!", message: "What a draw!")
+                }
+                
             }
         }
     
@@ -127,7 +138,5 @@ class PlayGameViewController: UIViewController {
         }))
         self.present(alert, animated: true,completion: nil)
     }
-    
-    
 }
 
