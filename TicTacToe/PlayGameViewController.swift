@@ -58,7 +58,6 @@ class PlayGameViewController: UIViewController {
             check(player: player)
             player = 1
         }
-        
     }
     
         func check(player: Int){
