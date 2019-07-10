@@ -47,14 +47,16 @@ class PlayGameViewController: UIViewController {
     @IBAction func Section(_ sender: UIButton) {
         sender.isEnabled = false
         if (player == 1){
-            sender.setImage(UIImage(named: "apple.png"), for: UIControl.State.normal)
+            sender.setImage(UIImage(named: "apple.png"), for: UIControl.State.disabled)
+            //sender.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
             board[sender.tag] = 1
             check(player: player)
             player = 2
         }
         else{
-            sender.setImage(UIImage(named: "android.png"), for: UIControl.State.normal)
+            sender.setImage(UIImage(named: "android.png"), for: UIControl.State.disabled)
             board[sender.tag] = 2
+            //sender.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
             check(player: player)
             player = 1
         }

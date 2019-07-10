@@ -17,13 +17,60 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="phA-pr-Eqn">
+                                <rect key="frame" x="0.0" y="56" width="414" height="800"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="top" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oq7-l1-oqX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Project" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xG-Bq-AR5">
+                                                <rect key="frame" x="115.5" y="0.0" width="183" height="42"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Student Number: 1834968" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyX-2c-huL">
+                                                <rect key="frame" x="104" y="42" width="206" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Minh Le" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lZ-ny-cLZ">
+                                                <rect key="frame" x="147.5" y="62.5" width="119.5" height="337.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="startscreen" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-Ug-QDL">
+                                        <rect key="frame" x="0.0" y="400" width="414" height="400"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Oq7-l1-oqX" firstAttribute="top" secondItem="phA-pr-Eqn" secondAttribute="top" id="34N-5z-iFi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oq7-l1-oqX" secondAttribute="trailing" id="5iJ-FC-oSM"/>
+                                    <constraint firstItem="Oq7-l1-oqX" firstAttribute="leading" secondItem="phA-pr-Eqn" secondAttribute="leading" id="I1y-1R-ryT"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="phA-pr-Eqn" secondAttribute="trailing" id="0l7-29-hyk"/>
+                            <constraint firstAttribute="bottom" secondItem="phA-pr-Eqn" secondAttribute="bottom" constant="40" id="gla-pX-MfY"/>
+                            <constraint firstItem="phA-pr-Eqn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kjl-Ww-EvL"/>
+                            <constraint firstItem="phA-pr-Eqn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="uRb-dw-H6O"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="startscreen" width="1280" height="720"/>
+    </resources>
 </document>
